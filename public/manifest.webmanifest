@@ -1,0 +1,10 @@
+{
+  "name": "SEEQ AI — Visual Intelligence",
+  "short_name": "SEEQ AI",
+  "description": "See, understand and solve with visual AI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071525",
+  "theme_color": "#071525",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
