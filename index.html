@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#071525" />
+    <meta name="description" content="SEEQ AI — See, understand and solve. Visual intelligence for everyday objects and machines." />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <title>SEEQ AI — Visual Intelligence</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="SEEQ AI home"><span class="brand-mark">S</span><span>SEEQ <b>AI</b><small>SEE · UNDERSTAND · SOLVE</small></span></a>
+        <div class="top-actions"><select id="language" aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="bho">भोजपुरी</option><option value="mai">मैथिली</option><option value="bn">বাংলা</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="mr">मराठी</option></select><button id="historyBtn" class="icon-btn" aria-label="History" title="History">◷</button></div>
+      </header>
+      <main class="main" id="home">
+        <section class="hero">
+          <div class="eyebrow"><span class="live-dot"></span> VISUAL INTELLIGENCE FOR EVERYONE</div>
+          <h1>See it.<br><span>Understand it.</span></h1>
+          <p class="hero-copy" data-i18n="heroCopy">Point your camera at an object, machine or anything you want to understand.</p>
+          <div class="scan-card">
+            <div class="scan-head"><div><strong data-i18n="scanTitle">Start with a photo</strong><small data-i18n="scanSub">Upload a clear image for better analysis</small></div><span class="scan-icon">⌁</span></div>
+            <div class="preview-wrap" id="previewWrap"><div class="preview-placeholder"><div class="camera-symbol">◎</div><strong data-i18n="previewTitle">Your image appears here</strong><small data-i18n="previewSub">Machines · Objects · Devices · Plants · More</small></div><img id="preview" alt="Selected image preview" hidden /></div>
+            <div class="upload-actions"><label class="btn btn-secondary" for="imageInput"><span>▧</span><span data-i18n="gallery">Choose image</span></label><label class="btn btn-secondary" for="cameraInput"><span>◎</span><span data-i18n="camera">Take photo</span></label><input id="imageInput" type="file" accept="image/*" hidden /><input id="cameraInput" type="file" accept="image/*" capture="environment" hidden /></div>
+            <label class="field-label" for="question" data-i18n="questionLabel">What do you want to know? (optional)</label>
+            <div class="question-wrap"><textarea id="question" rows="2" maxlength="500" placeholder="e.g. What is this machine and why is it making noise?"></textarea><button id="voiceBtn" class="voice-btn" title="Speak your question" aria-label="Speak your question">🎙</button></div>
+            <div class="scan-foot"><span class="privacy-note">🔒 <span data-i18n="privacy">Your image is sent for AI analysis. Avoid sensitive/private images.</span></span><button id="analyzeBtn" class="btn btn-primary" disabled><span data-i18n="analyze">Analyze image</span><span>↗</span></button></div>
+          </div>
+          <div class="quick-chips"><span data-i18n="try">Try:</span><button class="chip" data-prompt="Identify this object and explain what it is used for.">Identify object</button><button class="chip" data-prompt="Explain how this works in simple language.">How it works</button><button class="chip" data-prompt="What visible issue or damage can you identify? Suggest safe next steps.">Find a problem</button></div>
+        </section>
+        <section id="status" class="status" aria-live="polite"></section>
+        <section id="resultSection" class="result-section" hidden>
+          <div class="result-top"><div><div class="eyebrow">SEEQ ANALYSIS</div><h2 data-i18n="resultTitle">What SEEQ found</h2></div><button id="newScanBtn" class="text-btn" data-i18n="newScan">New scan +</button></div>
+          <div id="resultContent" class="result-content"></div>
+          <div class="result-actions"><button id="copyBtn" class="btn btn-secondary">Copy result</button><button id="speakBtn" class="btn btn-secondary">🔊 Listen</button><button id="saveBtn" class="btn btn-primary">Save to history</button></div>
+        </section>
+        <section class="disclaimer"><strong data-i18n="disclaimerTitle">Important safety note</strong><p data-i18n="disclaimer">SEEQ AI can make mistakes. It is not a certified technician, doctor or safety inspector. Never open live electrical equipment, bypass safety guards or attempt dangerous repairs based only on AI guidance.</p></section>
+      </main>
+      <footer><span>SEEQ AI © 2026</span><span>Built to help you understand the world.</span></footer>
+      <div id="historyPanel" class="history-panel" hidden><div class="history-head"><h2>Recent scans</h2><button id="closeHistory" class="icon-btn" aria-label="Close">×</button></div><div id="historyList"></div><button id="clearHistory" class="text-btn danger">Clear history</button></div>
+      <div id="toast" class="toast" role="status"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
